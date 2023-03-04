@@ -32,7 +32,7 @@
             return this.cache.Get<TValue>(key);
         }
 
-        public void Set(TKey key, TValue value)
+        public void AddOrUpdate(TKey key, TValue value)
         {
             this.cache.Set(key, value);
         }

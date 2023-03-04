@@ -17,7 +17,7 @@
         
         string Name { get; }
         long Count { get; }
-        void Set(TKey key, TValue value);
+        void AddOrUpdate(TKey key, TValue value);
         TValue Get(TKey key);
         bool ContainsKey(TKey key);
         TValue Remove(TKey key);

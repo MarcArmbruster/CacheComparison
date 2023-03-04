@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using GlobalLifeTimeCache;
 
-    internal static class AnalyzerLifeTimeCaches
+    internal static class AnalyzerGlobalLifeTimeCaches
     {
         internal static void Run()
         {
@@ -18,6 +18,8 @@
 
             List<IGlobalLifeTimeCache<int, TestItem>> caches = new List<IGlobalLifeTimeCache<int, TestItem>>
             {
+                new MicrosoftExtensionsGlobalLifeTimeCache<int, TestItem>(TimeSpan.FromSeconds(2), reloadFunc),
+                new SystemMemoryGlobalLifeTimeCache<int, TestItem>(TimeSpan.FromSeconds(2), reloadFunc),
                 new SimpleGlobalLifeTimeCache<int, TestItem>(TimeSpan.FromSeconds(2), reloadFunc)
             };
 
@@ -75,7 +77,7 @@
                 var memoryBefore = GC.GetTotalMemory(true);
                 for (int i = 0; i < size; i++)
                 {
-                    cache.Set(i, new TestItem(i, i.ToString(), i.ToString()));
+                    cache.AddOrUpdate(i, new TestItem(i, i.ToString(), i.ToString()));
                 }
                 var memoryAfter = GC.GetTotalMemory(true);
                 Console.WriteLine($"Size after loading: {(int)((memoryAfter - memoryBefore) / 1024)} kB");

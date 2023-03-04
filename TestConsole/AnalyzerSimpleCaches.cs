@@ -32,8 +32,8 @@
                             {
                                 for (int i = 0; i < size; i++)
                                 {
-                                    cache.Set(i, new TestItem(i, i.ToString(), i.ToString()));
-                                    cache.Set(i, new TestItem(i, i.ToString(), i.ToString()));
+                                    cache.AddOrUpdate(i, new TestItem(i, i.ToString(), i.ToString()));
+                                    cache.AddOrUpdate(i, new TestItem(i, i.ToString(), i.ToString()));
                                 }
                             })
                         .Invoke("Contains Key",
@@ -64,7 +64,7 @@
                         {
                             for (int i = 0; i < size; i++)
                             {
-                                cache.Set(i, new TestItem(i, i.ToString(), i.ToString()));
+                                cache.AddOrUpdate(i, new TestItem(i, i.ToString(), i.ToString()));
                             }
                         })
                         .Invoke("Clear", () => cache.Clear())
@@ -79,7 +79,7 @@
                 var memoryBefore = GC.GetTotalMemory(true);
                 for (int i = 0; i < size; i++)
                 {
-                    cache.Set(i, new TestItem(i, i.ToString(), i.ToString()));
+                    cache.AddOrUpdate(i, new TestItem(i, i.ToString(), i.ToString()));
                 }
                 var memoryAfter = GC.GetTotalMemory(true);
                 Console.WriteLine($"Size after loading: {(int)((memoryAfter - memoryBefore) / 1024)} kB");

@@ -40,7 +40,7 @@
             return (TValue)this.cache.Remove(key.ToString());
         }
 
-        public void Set(TKey key, TValue value)
+        public void AddOrUpdate(TKey key, TValue value)
         {
             this.cache.Add(new CacheItem(key.ToString(), value), new CacheItemPolicy());
         }

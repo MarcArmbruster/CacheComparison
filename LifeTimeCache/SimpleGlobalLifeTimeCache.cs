@@ -61,7 +61,7 @@
             return this.cache.ContainsKey(key);
         }
 
-        public void Set(TKey key, TValue value)
+        public void AddOrUpdate(TKey key, TValue value)
         {
             this.cache.AddOrUpdate(key, value, (k, v) => value);
         }
@@ -88,5 +88,4 @@
             this.cache.Clear();
         }
     }
-
 }
