@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cache\Cache.csproj" />
+    <ProjectReference Include="..\LifeTimeCache\GlobalLifeTimeCache.csproj" />
   </ItemGroup>
 
 </Project>

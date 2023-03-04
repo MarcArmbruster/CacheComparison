@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalLifeTimeCache", "LifeTimeCache\GlobalLifeTimeCache.csproj", "{979CDE2E-42A9-4FD4-ADF6-2E4D2A3A26BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{FC5435FA-055C-49C6-8607-E4D1FC58C440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC5435FA-055C-49C6-8607-E4D1FC58C440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC5435FA-055C-49C6-8607-E4D1FC58C440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{979CDE2E-42A9-4FD4-ADF6-2E4D2A3A26BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{979CDE2E-42A9-4FD4-ADF6-2E4D2A3A26BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{979CDE2E-42A9-4FD4-ADF6-2E4D2A3A26BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{979CDE2E-42A9-4FD4-ADF6-2E4D2A3A26BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
