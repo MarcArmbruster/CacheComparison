@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cache\Cache.csproj" />
-    <ProjectReference Include="..\ItemLifeTimeCache\ItemLifeTimeCache.csproj" />
-    <ProjectReference Include="..\LifeTimeCache\GlobalLifeTimeCache.csproj" />
+    <PackageReference Include="System.Runtime.Caching" Version="7.0.0" />
   </ItemGroup>
 
 </Project>

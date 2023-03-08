@@ -36,6 +36,7 @@
             var lastTimeStamp = log.Last().Key;
             var now = stopwatch.ElapsedMilliseconds;
             var duration = now - lastTimeStamp;
+            if (log.ContainsKey(now)) { now += 1; }
             log.Add(now, info);
             outputChannel.Invoke($"Total:{now}ms; Step:{duration}ms: {info}");
             return this;

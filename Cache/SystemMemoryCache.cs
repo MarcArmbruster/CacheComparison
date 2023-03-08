@@ -12,7 +12,8 @@
     /// <typeparam name="TValue"></typeparam>
     public class SystemMemoryCache<TKey, TValue> : IEasyCache<TKey, TValue>
     {
-        private MemoryCache cache = new MemoryCache("SystemMemoryCache");
+        private MemoryCache cache = MemoryCache.Default;
+        
         public string Name => this.cache.Name;
 
         public long Count => this.cache.GetCount();

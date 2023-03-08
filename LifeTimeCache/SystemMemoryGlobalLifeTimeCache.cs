@@ -7,7 +7,7 @@
 
     public class SystemMemoryGlobalLifeTimeCache<TKey, TValue> : IGlobalLifeTimeCache<TKey, TValue>
     {
-        private MemoryCache cache = new MemoryCache("SystemMemoryCache");
+        private MemoryCache cache =  MemoryCache.Default;
 
         private DateTime lastRefresh = DateTime.MinValue;
         public string Name => this.GetType().Name;

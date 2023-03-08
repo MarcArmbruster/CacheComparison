@@ -73,6 +73,7 @@
 
             foreach (var cache in caches)
             {
+                cache.Clear();
                 Console.WriteLine($"Size Check: {cache.Name}");
                 var memoryBefore = GC.GetTotalMemory(true);
                 for (int i = 0; i < size; i++)
