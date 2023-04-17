@@ -8,7 +8,7 @@
     {
         internal static void Run()
         {
-            int size = 100000;
+            int size = 50_000;
 
             List<IEasyCache<int, TestItem>> caches = new List<IEasyCache<int, TestItem>>
             {
@@ -77,6 +77,9 @@
             {
                 cache.Clear();
                 Console.WriteLine($"Size Check: {cache.Name}");
+
+                GcCollectAll();
+
                 var memoryBefore = GC.GetTotalMemory(true);
                 for (int i = 0; i < size; i++)
                 {
@@ -86,6 +89,14 @@
                 Console.WriteLine($"Size after loading: {(int)((memoryAfter - memoryBefore) / 1024)} kB");
                 Console.WriteLine("---------------------------------------------");
             }
+        }
+
+        private static void GcCollectAll()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            GC.Collect();
+            GC.WaitForFullGCComplete();
         }
     }
 }
